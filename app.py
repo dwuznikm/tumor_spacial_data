@@ -32,7 +32,7 @@ def main():
 
     # Plot the spatial data
     fig, ax = plt.subplots()
-    sns.scatterplot(x="nucleus.x", y="nucleus.y", data=merged_df, hue="celltype")
+    sns.scatterplot(x="nucleus.x", y="nucleus.y", data=merged_df, hue="celltype", alpha=0.6)
     plt.title('Cell data')
     plt.xlabel("x_column")
     plt.ylabel("y_column")
@@ -69,7 +69,7 @@ def main():
     for comp in indexes_above_threshold:
         bcell_component_count[comp] = counts[comp]
 
-    # Find cell.ID and celltype for each bcell that's in a component with > 15 bcells
+    # Find cell.ID and celltype for each bcell that's in a component with > x amount of bcells
     components_cell_dict = {}
     for index in indexes_above_threshold:
         cell_dict = {}
